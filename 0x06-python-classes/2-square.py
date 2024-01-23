@@ -4,11 +4,16 @@
 
 class Square:
     """properties of square.
+    Atrubute:
+    size: size of square
     """
     def __init__(self, size=0):
-        try:
-            self.__size = size
-        except TypeError:
-            print("size must be an integer")
-        except ValueError:
-            print("size must be >= 0")
+        """creat new instance
+        Args:
+        size: size of square
+        """
+        self.__size = size
+        if not instence(size, int):
+            raise print("size must be an integer")
+        elif size < 0:
+            raise print("size must be >= 0")
