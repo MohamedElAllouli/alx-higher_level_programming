@@ -49,7 +49,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """ print squqre 
+        """ print squqre
         """
         if self.__size == 0:
             print("")
