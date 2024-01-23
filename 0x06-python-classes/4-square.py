@@ -3,38 +3,47 @@
 
 
 class Square:
-    """properties of square.
-    Atrubute:
-    size: size of square
+    """
+    Class that defines properties of square
+
+    Attributes:
+        size: size of a square (1 side).
     """
     def __init__(self, size=0):
-        """creat new instance
+        """Creates new instances of square.
+
         Args:
-        size: size of square
+            size: size of the square
         """
         self.__size = size
 
     def area(self):
-        """Returns the size of a square
+        """Calculates the area of square.
+
+        Returns: the current square area.
         """
         return self.__size * self.__size
 
     @property
     def size(self):
+        """Returns the size of a square
+        """
         return self.__size
 
     @size.setter
-    def def size(self, value):
+    def size(self, value):
         """Property setter for size.
+
         Args:
-        alue (int): size of a square (1 side).
+            value: size of a square (
+
         Raises:
-        TypeError: size must be an integer
-        ValueError: size must be >= 0
+            TypeError: size must be an integer
+            ValueError: size must be >= 0
         """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            size.__size = value
+            self.__size = value
