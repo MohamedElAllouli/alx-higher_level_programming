@@ -13,7 +13,7 @@ class Square:
         size: size of square
         """
         self.__size = size
-        if not instence(size, int):
+        if not isinstance(size, int):
             raise print("size must be an integer")
         elif size < 0:
             raise print("size must be >= 0")
