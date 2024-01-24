@@ -88,8 +88,10 @@ class Square:
                     print(" ",  end="")
                 print("#" * (self.__size))
 
-     def __str__(self):
+    def __str__(self):
         """Prints square offsetting it by position with symbol #
+
+
         """
         if self.__size == 0:
             return ''
