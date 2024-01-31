@@ -99,7 +99,7 @@ class Rectangle:
             return ""
         for i in range(self.__height):
             for j in range(self.__width):
-                rec.append(self.print_symbol)
+                rec.append(str(self.print_symbol))
             rec.append("\n")
         rec.pop()
         return "".join(rec)
