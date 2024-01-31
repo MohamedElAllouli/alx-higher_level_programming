@@ -29,12 +29,12 @@ class Rectangle:
         return self.__width
 
     @property
-    def width(self):
-        """Width retriver.
+    def height(self):
+        """height retriver.
         Returns:
         int: the width of the rectangle.
         """
-        return self.__width
+        return self.__height
 
     @width.setter
     def width(self, value):
