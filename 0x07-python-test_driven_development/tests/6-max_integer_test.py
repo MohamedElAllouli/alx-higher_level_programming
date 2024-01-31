@@ -1,57 +1,57 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
+"""Unittest for max_integer
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class TestMaxInteger(unittest.TestCase):
+class MaxIntegerTests(unittest.TestCase):
     """Unittest for max_integer([..])"""
 
-    def test_no_arg(self):
-        """Unittest for max_integer([..])"""
+    def test_is_no_arg(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer(), None)
 
-    def test_empty_list(self):
-        """Unittest for max_integer([..])"""
+    def test_is_list_empty(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([]), None)
 
-    def test_one(self):
-        """Unittest for max_integer([..])"""
+    def test_is_one(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([98]), 98)
 
-    def test_identical(self):
-        """Unittest for max_integer([..])"""
+    def test_is_identical(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([7, 7, 7, 7]), 7)
 
-    def test_max_start(self):
-        """Unittest for max_integer([..])"""
+    def test_is_max_start(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([5, 4, 3, 2]), 5)
 
-    def test_ordered(self):
-        """Unittest for max_integer([..])"""
+    def test_is_ordered(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
-    def test_ordered_larger(self):
-        """Unittest for max_integer([..])"""
+    def test_is_ordered_larger(self):
+        """Unittest for max integer"""
         self.assertEqual(max_integer([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]), 20)
 
     def test_unordered(self):
-        """Unittest for max_integer([..])"""
+        """Unittest for max integer([..])"""
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
 
-    def test_unordered_larger(self):
-        """Unittest for max_integer([..])"""
-        self.assertEqual(max_integer([23, 58, 91, 24, 1024, 89, 98,
-            108, 256, 512]), 1024)
-    
-    def test_positives_and_negatives(self):
-        """Unittest for max_integer([..])"""
-        self.assertEqual(max_integer([-23, 58, 91, 24, -1024, 89, 98, 108, -256, -512]),
-                108)
+    def test_is_unordered_larger(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer([23, 58, 91, 24, 1024, 89, 98, 108, 256,
+            512]), 1024)
 
-    def test_positives_and_negatives_large(self):
-        """Unittest for max_integer([..])"""
+    def test_is_positives_negatives(self):
+        """Unittest for max integer([..])"""
+        self.assertEqual(max_integer([-23, 58, 91, 24, -1024, 89, 98, 108,
+            -256, -512]), 108)
+
+    def test_is_positives_negatives_large(self):
+        """Unittest for max integer"""
         self.assertEqual(
                 max_integer(
                     [-6351, 9735, -8649, 4405, 6261, -1907, -9443, -6308,
@@ -67,8 +67,9 @@ class TestMaxInteger(unittest.TestCase):
                         -4104, 5772, 5121, -2186, -4870, -4116, 6443, -9381,
                         -9388, 8552, 3582, 3500, 7924, 211, -2976, 6346, -5405,
                          899, -3432, -2550, -3353, 6944, 9623]), 9823)
-    def test_negatives(self):
-        """Unittest for max_integer([..])"""
+
+    def test_is_negatives(self):
+        """Unittest for max integer"""
         self.assertEqual(
                 max_integer(
                     [-6105619, -854849, -562553, -3088955, -6711290, -4817844,
@@ -91,13 +92,14 @@ class TestMaxInteger(unittest.TestCase):
                         -8054214, -8565596, -639225, -2292452, -4269529,
                         -7202853, -6891036, -4379807, -7955196, -1536591,
                         -2839083, -2586661, -9941097, -3136620]), -71562)
-    def test_ints_and_floats(self):
-        """Unittest for max_integer([..])"""
+
+    def test_is_ints_floats(self):
+        """Unittest for max_integer"""
         self.assertEqual(
                 max_integer(
                     [10, 99.8, -100, -0.1, 1000, 9999, -100000, 9998.9]), 9999)
-    
-    def test_ints_and_floats_large(self):
+
+    def test_is_ints_floats_large(self):
         """Unittest for max_integer([..])"""
         self.assertEqual(
                 max_integer(
@@ -135,14 +137,15 @@ class TestMaxInteger(unittest.TestCase):
                         51481.13114754098, 571618.5, 35977.166666666664,
                         142333.11764705883, 199123.75]), 2503567)
 
-    def test_floats(self):
-        """Unittest for max_integer([..])"""
+    def test_is_floats(self):
+        """Unittest for max_integer"""
         self.assertEqual(
                 max_integer(
                     [.00123, .457568, .02345, .23423434, .45675674, .678678,
                         .867090, .74653, .5745375]), 0.86709)
-    def test_floats_large(self):
-        """Unittest for max_integer([..])"""
+
+    def test_is_floats_large(self):
+        """Unittest for max integer"""
         self.assertEqual(
                 max_integer(
                     [0.36701449486981136, 0.22932193120425423, 17.269673745943177,
@@ -181,72 +184,71 @@ class TestMaxInteger(unittest.TestCase):
                         1.1255361340134915, 0.3631658619504303,
                         0.8812949657884553, 1.1100323642668828,
                         5.0119643460188845, 2.8953551308720056,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                2.5574324632368866, 9.169493642307119, 0.4175692708444569,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    2.344748944605401, 1.1674261590629318, 0.6998588019912835,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        0.42770576125452897, 1.7136005979522013,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            8.877571036363525, 0.6825287480571863, 2.6834294650218338,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                0.7504024417975861, 0.2762206358275793,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    0.20607476376994402, 0.9497689034126077,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        2.1498649449691807]), 29.496355326217376)
+                        2.5574324632368866, 9.169493642307119, 0.4175692708444569,
+                        2.344748944605401, 1.1674261590629318, 0.6998588019912835,
+                        0.42770576125452897, 1.7136005979522013,
+                        8.877571036363525, 0.6825287480571863, 2.6834294650218338,
+                        0.7504024417975861, 0.2762206358275793,
+                        0.20607476376994402, 0.9497689034126077,
+                        2.1498649449691807]), 29.496355326217376)
 
-                                                                                                                                                                                                                                                                def test_numeric_string(self):
-                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                    self.assertEqual(max_integer("192834754"), "9")
+    def test_is_numeric_string(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer("192834754"), "9")
 
-                                                                                                                                                                                                                                                                                        def test_string(self):
-                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                            self.assertEqual(max_integer("Holberton"), "t")
+    def test_is_string(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer("Mohamed"), "t")
 
-                                                                                                                                                                                                                                                                                                                def test_lists(self):
-                                                                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                    self.assertEqual(max_integer([[], [2], [4], [2, 9]]), [4])
+    def test_is_lists(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer([[], [2], [4], [2, 9]]), [4])
 
-                                                                                                                                                                                                                                                                                                                                        def test_str_list(self):
-                                                                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                            self.assertEqual(
-                                                                                                                                                                                                                                                                                                                                                                                max_integer([["foo"], ["boo"], ["abc"], ["sic"], ["ric"]]),
-                                                                                                                                                                                                                                                                                                                                                                                            ["sic"])
+    def test_is_str_list(self):
+        """"Unittest for max integer"""
+        self.assertEqual(
+                max_integer([["foo"], ["boo"], ["abc"], ["sic"], ["ric"]]),
+                ["sic"])
 
-                                                                                                                                                                                                                                                                                                                                                                def test_inf(self):
-                                                                                                                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                    self.assertEqual(max_integer([99, float('inf'), float('-inf')]),
-                                                                                                                                                                                                                                                                                                                                                                                                                     float('inf'))
+    def test_is_inf(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer([99, float('inf'), float('-inf')]),
+                float('inf'))
 
-                                                                                                                                                                                                                                                                                                                                                                                        def test_nan(self):
-                                                                                                                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                            self.assertEqual(max_integer([99, float('nan'), 100]), 100)
+    def test_is_nan(self):
+        """Unittest for max integer"""
+        self.assertEqual(max_integer([99, float('nan'), 100]), 100)
 
-                                                                                                                                                                                                                                                                                                                                                                                                                def test_mixed_list(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                    with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    max_integer([[], [2], [4], [2, 9], 99, "foo"])
+    def test_is_mixed_list(self):
+        """Unittest for max_integer"""
+        with self.assertRaises(TypeError):
+            max_integer([[], [2], [4], [2, 9], 99, "foo"])
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        def test_mixed_list_int_str(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            max_integer([99, "foo"])
+    def test_is_mixed_list_int_str(self):
+        """Unittest for max integer"""
+        with self.assertRaises(TypeError):
+            max_integer([99, "foo"])
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                def test_none(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    max_integer(None)
+    def test_is_none(self):
+        """Unittest for max_integer"""
+        with self.assertRaises(TypeError):
+            max_integer(None)
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        def test_dict(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            max_integer([{20: 23, 14: 45}, {"a": "b"}])
+    def test_is_dict(self):
+        """Unittest for max integer"""
+        with self.assertRaises(TypeError):
+            max_integer([{20: 23, 14: 45}, {"a": "b"}])
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                def test_int(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    max_integer(98)
+    def test_is_int(self):
+        """Unittest for max_integer"""
+        with self.assertRaises(TypeError):
+            max_integer(98)
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        def test_float(self):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    """Unittest for max_integer([..])"""
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            with self.assertRaises(TypeError):
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            max_integer(9.8)
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            if __name__ == '__main__':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    unittest.main()
+    def test_is_float(self):
+        """Unittest for max integer"""
+        with self.assertRaises(TypeError):
+            max_integer(9.8)
 
 
+if __name__ == '__main__':
+    unittest.main()
