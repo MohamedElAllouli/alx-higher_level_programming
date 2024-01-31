@@ -151,4 +151,4 @@ class Rectangle:
         Returns:
         Square: the new rectangle with equal values of height and width.
         """
-        return Rectangle(size, size)
+        return (cls(size, size))
