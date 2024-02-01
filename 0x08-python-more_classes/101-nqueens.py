@@ -12,13 +12,16 @@ candidates (list) of (list) of (list) of (int): list of all successful
 olutions for given amount of columns checked
 """
 from sys import argv
-if len(argv) is not 2:
+if len(argv) != 2:
     print('Usage: nqueens N')
     exit(1)
+
 if not argv[1].isdigit():
     print('N must be a number')
     exit(1)
-    N = int(argv[1])
+
+N = int(argv[1])
+
 if N < 4:
     print('N must be at least 4')
     exit(1)
@@ -115,7 +118,7 @@ for col in range(N):
                 add_queen(temp, row, col)
                 if col < N - 1:
                     board_column_gen(temp)
-                    new_candidates.append(temp)
+                new_candidates.append(temp)
     candidates = new_candidates
 for item in coordinate_format(candidates):
     print(item)
