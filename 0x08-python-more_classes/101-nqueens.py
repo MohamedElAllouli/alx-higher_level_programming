@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-"""101-nqueens finds all possible solutions the N queens puzzle, including
+"""
+finds all possible solutions the N queens puzzle, including
 translations and reflections.
-Attempted virtual backtracking without recursion. In local tests process will
-start to slow down visibly for N > 8, and is successful up to N = 11 but
-will be killed if used for N > 11. Recursion could allow for a lighter weight
-process, but it's not yet apparent to this student how to retain a record of
-which solutions are already derived with that method.
 Attributes:
 N (int): base number of queens, and length of board side in piece positions
 candidates (list) of (list) of (list) of (int): list of all successful
-olutions for given amount of columns checked
+solutions
 """
 from sys import argv
 if len(argv) != 2:
@@ -27,7 +23,7 @@ if N < 4:
     exit(1)
 
 
-def board_column_gen(board=[]):
+def column_board_gen(board=[]):
     """Adds a column of zeroes to the right of any board about to be tested for
     queen arrangements in that column.
     Args:
@@ -45,7 +41,7 @@ def board_column_gen(board=[]):
     return board
 
 
-def add_queen(board, row, col):
+def queen_add(board, row, col):
     """Sets "queen," or 1, to coordinates given in board.
     Args:
     board (list) of (list) of (int): 2D list of ints, only as wide as
@@ -56,7 +52,7 @@ def add_queen(board, row, col):
     board[row][col] = 1
 
 
-def new_queen_safe(board, row, col):
+def queen_safe(board, row, col):
     """For the board given, checks that for a new queen placed in the rightmost
     column, there are no other "queen"s, or 1 values, in the martix to the
     left, and diagonally up-left and down-left.
@@ -83,7 +79,7 @@ def new_queen_safe(board, row, col):
     return True
 
 
-def coordinate_format(candidates):
+def coor_dinate_format(candidates):
     """Converts a board (matrix of 1 and 0) into a series of row/column
     indicies of each queen/1.
     Args:
@@ -108,17 +104,17 @@ def coordinate_format(candidates):
 
 
 candidates = []
-candidates.append(board_column_gen())
+candidates.append(column_board_gen())
 for col in range(N):
     new_candidates = []
     for matrix in candidates:
         for row in range(N):
-            if new_queen_safe(matrix, row, col):
+            if queen_safe(matrix, row, col):
                 temp = [line[:] for line in matrix]
-                add_queen(temp, row, col)
+                queen_add(temp, row, col)
                 if col < N - 1:
-                    board_column_gen(temp)
+                    column_board_gen(temp)
                 new_candidates.append(temp)
     candidates = new_candidates
-for item in coordinate_format(candidates):
+for item in coor_dinate_format(candidates):
     print(item)
