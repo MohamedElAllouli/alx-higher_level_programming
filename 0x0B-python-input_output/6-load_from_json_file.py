@@ -9,3 +9,4 @@ def load_from_json_file(filename):
     """read an Object to a text file,"""
     with open(filename, 'r', encoding='utf-8') as f:
         x = son.load(f)
+        return x
