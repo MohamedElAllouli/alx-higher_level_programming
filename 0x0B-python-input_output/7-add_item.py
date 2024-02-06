@@ -12,7 +12,7 @@ filename = "add_item.json"
 jsonlist = []
 
 if os.path.exists(filename):
-    json_list = load_from_json_file(filename)
+    jsonlist = load_from_json_file(filename)
 for index in argv[1:]:
     jsonlist.append(index)
 
