@@ -82,3 +82,9 @@ class Rectangle(Base):
             rectangle += (" " * self.x)
             rectangle += ("#" * self.width) + "\n"
         print(rectangle, end='')
+
+    ef __str__(self):
+        '''string info about rectangle.'''
+        return '[{}] ({}) {}/{} - {}/{}'.\
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
+                   self.height)
