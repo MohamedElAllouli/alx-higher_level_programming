@@ -102,7 +102,7 @@ class Rectangle(Base):
         if y is not None:
             self.y = y
 
-    def update(self, *args, **kwargs):
+    def update(self, *args):
         '''Updates instance attributes via args'''
         # print(args, kwargs)
         if args:
