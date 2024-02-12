@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Module that contains class Base """
-import json
+from json import dumps, loads
 
 
 class Base:
