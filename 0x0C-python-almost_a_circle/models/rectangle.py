@@ -107,5 +107,5 @@ class Rectangle(Base):
         # print(args, kwargs)
         if args:
             self.__update(*args)
-        elif kwrags:
+        elif kwargs:
             self.__update(**kwargs)
