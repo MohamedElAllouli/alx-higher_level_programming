@@ -34,20 +34,6 @@ class Base:
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
 
-    @classmethod
-    def create(cls, **dictionary):
-        '''Loads instance from dictionary.'''
-        from models.rectangle import Rectangle
-        from models.square import Square
-        if cls is Rectangle:
-            new_one = Rectangle(1, 1)
-        elif cls is Square:
-            new_one = Square(1)
-        else:
-            new_one = None
-        new_one.update(**dictionary)
-        return new_one
-
     @staticmethod
     def from_json_string(json_string):
         '''return list of the JSON string representation'''
@@ -63,3 +49,17 @@ class Base:
             return []
         with open(file, "r", encoding="utf-8") as f:
             return [cls.create(**d) for d in cls.from_json_string(f.read())]
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''Loads instance from dictionary.'''
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            new_one = Rectangle(1, 1)
+        elif cls is Square:
+            new_one = Square(1)
+        else:
+            new_one = None
+        new_one.update(**dictionary)
+        return new_one
