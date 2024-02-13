@@ -77,7 +77,7 @@ class Base:
         except IOError:
             return []
 
-     @classmethod
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         '''object to csv file.'''
         from models.rectangle import Rectangle
