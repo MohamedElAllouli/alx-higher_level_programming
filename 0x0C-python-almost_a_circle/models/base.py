@@ -2,6 +2,8 @@
 """ Module that contains class Base """
 from json import dumps, loads
 from os import path
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class Base:
@@ -32,9 +34,21 @@ class Base:
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
 
+    @classmethod
+    def create(cls, **dictionary):
+        '''Loads instance from dictionary.'''
+        if cls is Rectangle:
+            new_one = Rectangle(1, 1)
+        elif cls is Square:
+            new_one = Square(1)
+        else:
+            new_one = None
+        new_one.update(**dictionary)
+        return new_one
+
     @staticmethod
     def from_json_string(json_string):
-        '''returns the list of the JSON string representation'''
+        '''return list of the JSON string representation'''
         if json_string is None or not json_string:
             return []
         return loads(json_string)
