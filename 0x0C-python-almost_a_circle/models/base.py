@@ -59,7 +59,7 @@ class Base:
                 new_one = cls(1, 1)
             else:
                 new_one = cls(1)
-            new.update(**dictionary)
+            new_one.update(**dictionary)
             return new_one
 
     @classmethod
