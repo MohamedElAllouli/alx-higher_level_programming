@@ -2,8 +2,6 @@
 """ Module that contains class Base """
 from json import dumps, loads
 from os import path
-from models.rectangle import Rectangle
-from models.square import Square
 
 
 class Base:
