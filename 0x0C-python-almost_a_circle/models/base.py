@@ -56,10 +56,10 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         if cls is Rectangle:
-            new_one = Rectangle(1, 1)
+            new = Rectangle(1, 1)
         elif cls is Square:
-            new_one = Square(1)
+            new = Square(1)
         else:
-            new_one = None
-        new_one.update(**dictionary)
-        return new_one
+            new = None
+        new.update(**dictionary)
+        return new
