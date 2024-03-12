@@ -2,5 +2,5 @@
 -- Records should be ordered by score (top first)
 SELECT `score`, `name`
 FROM `second_table`
-ORDER BY `score` DESC
-HAVING score >= 10;
+WHERE `score` >= 10
+ORDER BY `score` DESC;
